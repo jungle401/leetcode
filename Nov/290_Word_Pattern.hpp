@@ -26,6 +26,10 @@ public:
             k += 1;
             i = j;
         }
-        return k == pattern.size();
+        // return k == 
+        if (k != pattern.size()) {
+            return false;
+        }
+        return true;
     }
 };
