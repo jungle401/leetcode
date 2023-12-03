@@ -1,19 +1,17 @@
 class Solution {
 public:
     int countCharacters(vector<string>& words, string chars) {
-        auto um = unordered_map<char, int>();
+        int cnt[26] = {0};
         for (auto& c : chars) {
-            um[c]++;
+            cnt[c - 'a']++;
         }
         auto res = 0;
         for (auto& w : words) {
-            auto umw = unordered_map<char, int>();
-            for (auto& c : w) {
-                umw[c]++;
-            }
+            int wcnt[26] = {0};
             auto ok = true;
-            for (auto& [c, t] : umw) {
-                if (t > um[c]) {
+            for (auto& c : w) {
+                wcnt[c - 'a']++;
+                if (wcnt[c - 'a'] > cnt[c - 'a']) {
                     ok = false;
                     break;
                 }
