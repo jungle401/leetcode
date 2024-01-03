@@ -28,10 +28,6 @@ public:
             } else if (i == l) {
                 return -cal(s, l + 2, r - 1);
             } else {
-                // cout << s[i] << '\t';
-                // cout << s.substr(l, i) << '\t';
-                // cout << s.substr(i + 2, r - 3 - i - 2) << '\t';
-                // cout << endl;
                 auto op1 = cal(s, l, i);
                 auto op2 = cal(s, i + 2, r - 1);
                 return op(s[i], op1, op2);
