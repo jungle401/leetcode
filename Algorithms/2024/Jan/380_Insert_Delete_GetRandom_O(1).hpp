@@ -1,29 +1,29 @@
 class RandomizedSet {
 public:
-    unordered_set<int> s;
-    RandomizedSet() {
+  unordered_set<int> s;
+  RandomizedSet() {
 
-    }
-    
-    bool insert(int val) {
-        auto [it, bl] = s.insert(val);
-        return bl;
-    }
-    
-    bool remove(int val) {
-        return s.erase(val);
-    }
-    
-    int getRandom() {
-        auto r = rand() % s.size();
-        auto it = s.begin();
-        for (int i = 0; i < r; i++) {
-            it = next(it);
-        }
-        auto res = *it;
-        // s.erase(it);
-        return res;
-    }
+  }
+  
+  bool insert(int val) {
+      auto [it, bl] = s.insert(val);
+      return bl;
+  }
+  
+  bool remove(int val) {
+      return s.erase(val);
+  }
+  
+  int getRandom() {
+      auto r = rand() % s.size();
+      auto it = s.begin();
+      for (int i = 0; i < r; i++) {
+          it = next(it);
+      }
+      auto res = *it;
+      // s.erase(it);
+      return res;
+  }
 };
 
 /**
