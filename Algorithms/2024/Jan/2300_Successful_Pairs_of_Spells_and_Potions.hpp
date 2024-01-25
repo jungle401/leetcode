@@ -4,7 +4,6 @@ public:
         sort(potions.begin(), potions.end());
         auto res = vector<int>();
         for (auto& i : spells) {
-            auto tmp = 0;
             auto lb = lower_bound(potions.begin(), potions.end(), i, [&success] (const long long& element, const auto& val) {
                 return element * val < success;
             });
