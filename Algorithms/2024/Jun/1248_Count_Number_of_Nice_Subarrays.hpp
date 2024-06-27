@@ -1,6 +1,6 @@
 class Solution {
 public:
-	bool is_odd(int num) {
+	inline bool is_odd(int num) {
 		return num & 1;
 	}
 	int numberOfSubarrays(vector<int>& nums, int k) {
