@@ -1,6 +1,7 @@
 #include <cctype>
 #include <fstream>
 #include <iostream>
+#include <filesystem>
 
 using namespace std;
 
@@ -24,13 +25,15 @@ int main(int argc, char** argv) {
       }
     }
   }
+  auto written_file_path = filesystem::path(res);
   res += ".hpp";
-  auto fout = ofstream("/Users/johnson/Desktop/others/leet_code/leetcode/Algorithms/2024/Jun/" + res);
+  written_file_path = filesystem::path("/Users/johnson/Desktop/others/leet_code/leetcode/Algorithms/2024/Jul") / res;
+  auto fout = ofstream(written_file_path);
   if (!fout.is_open()) {
     cerr << "file open failed!" << endl;
     exit(-1);
   } else {
-    cout << "file created:\t";
-    cout << res << endl;
+    cout << "file created:\n";
+    cout << written_file_path << endl;
   }
 }
