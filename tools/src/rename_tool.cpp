@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
   }
   auto written_file_path = filesystem::path(res);
   res += ".hpp";
-  written_file_path = filesystem::path("/Users/johnson/Desktop/others/leet_code/leetcode/Algorithms/2024/Jul") / res;
+  written_file_path = filesystem::path("/Users/johnson/Desktop/learn/leetcode/Algorithms/2024/Jul/") / res;
   auto fout = ofstream(written_file_path);
   if (!fout.is_open()) {
     cerr << "file open failed!" << endl;
